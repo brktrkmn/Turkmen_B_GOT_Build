@@ -35,7 +35,7 @@
 
 
   function animateBanners() {
-    // move the banners across the screen
+        // move the banners across the screen
     const offSet = 600;
 
     let multiplier = this.dataset.offset,
@@ -47,6 +47,7 @@
     showHouseData(multiplier);
   }
 
+
   function showHouseData(targetIndex) {
 
 
@@ -55,15 +56,20 @@
   }
 
   sigils.forEach(sigil => sigil.addEventListener("click", popLightBox));
+
   sigils.forEach(sigil => sigil.addEventListener("click", animateBanners));
 
+
+
   function popLightBox() {
+
 
     // find the right house video using the CSS class attached to the sigil that was clicked
     let targetVideo = this.className.split(" ")[1];
 
     // get the house name, capitalize the first character, and then rebuild the whole word with a cap.
     let targetVidCap = targetVideo.charAt(0).toUpperCase() + targetVideo.slice(1);
+
 
     // load the correct house video
     houseVideo.src = `video/House-${targetVidCap}.mp4`;
@@ -74,6 +80,9 @@
     // add the show-lightbox class to the lBox element
     lBox.classList.add('show-lightbox');
   }
+  // setTimeout(popLightBox (), 3000);
+
+
 
   function closeLightBox() {
     // stop and rewind the video element
@@ -88,3 +97,36 @@
   lbClose.addEventListener("click", closeLightBox);
   houseVideo.addEventListener("ended", closeLightBox);
 })();
+
+var player = document.getElementById("GOTvideo");
+
+function playPause() {
+    if (player.paused)
+        player.play();
+    else
+        player.pause();
+}
+
+function stopVideo() {
+    player.pause();
+    if (player.currentTime) {
+        player.currentTime = 0;
+    }
+}
+
+function increaseVolume() {
+    if (player.volume < 1)
+        player.volume = parseFloat(player.volume + 0.1).toFixed(1);
+}
+
+function decreaseVolume() {
+    if (player.volume > 0)
+        player.volume = parseFloat(player.volume - 0.1).toFixed(1);
+}
+
+function muteVolume() {
+    if (player.muted)
+        player.muted = false;
+    else
+        player.muted = true;
+}
