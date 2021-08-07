@@ -18,7 +18,6 @@
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
-        <img src="images/targaryen.jpg"/>
         <img src="images/frey.jpg"/>
         <img src="images/tyrell.jpg"/>
         <img src="images/targaryen.jpg"/>
@@ -48,7 +47,15 @@
     <section class="lightbox">
       <span class="close-button">x</span>
 
-      <video src="video/House-Stark.mp4"></video>
+      <video src="video/House-Stark.mp4" id="GOTvideo"></video>
+
+      <div id="volume_controls">
+        <a onclick="playPause()" class="controlCont"><img src="images/play.png" alt="Play/Pause"></a>
+        <a onclick="stopVideo()" class="controlCont"><img src="images/stop.png" alt="Stop"></a>
+        <a onclick="decreaseVolume()" class="controlCont"><img src="images/vDown.png" alt="Volume Down"></a>
+        <a onclick="increaseVolume()" class="controlCont"><img src="images/vUp.png" alt="Volume Up"></a>
+        <a onclick="muteVolume()" class="controlCont"><img src="images/mute.png" alt="Mute"></a>
+      </div>
     </section>
 </main>  <!--end mainContainer-->
 
